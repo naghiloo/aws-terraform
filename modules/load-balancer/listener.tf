@@ -3,7 +3,8 @@ resource "aws_lb_listener" "lb_listener" {
   port              = var.port
   protocol          = var.protocol
   default_action {
-    target_group_arn = "${aws_alb_target_group.target_group.arn}"
+    target_group_arn = var.target_group_arn
     type             = var.action_type
   }
 }
+
