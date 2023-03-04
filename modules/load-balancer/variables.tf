@@ -22,3 +22,7 @@ variable "protocol" {
 variable "action_type" {
   type = string
 }
+
+variable "target_group_arn"{
+  type = string
+}
