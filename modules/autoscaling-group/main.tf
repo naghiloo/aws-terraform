@@ -6,7 +6,7 @@ resource "aws_launch_configuration" "lunch_configuration" {
     security_groups = var.security_groups
 
     lifecycle {
-      create_before_destroy = var.create_before_destroy
+      create_before_destroy = true
     }
   
 }
@@ -17,7 +17,7 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   min_size = var.min_size
   max_size = var.max_size
   desired_capacity = var.desired_capacity
-  availability_zones = var.availability_zones
+  availability_zones = [ "eu-central-1a" ]
   target_group_arns = var.target_group_arns
   health_check_type = var.health_check_type
   force_delete = var.force_delete

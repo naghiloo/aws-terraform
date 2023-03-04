@@ -1,3 +1,6 @@
+variable "vpc_id" {}
+variable "aws_region" {}
+
 # aws_launch_configuration
 variable "lc_name" {
   type = string
@@ -17,11 +20,6 @@ variable "key_name" {
 
 variable "security_groups" {
   type = list(string)
-}
-
-variable "create_before_destroy" {
-  type = string
-  default = true
 }
 
 # aws_autoscaling_group
@@ -44,3 +42,25 @@ variable "desired_capacity" {
   default = 1
 }
 
+variable "availability_zones" {
+  type = list(string)
+  default = [ "a", "b" ]
+}
+
+variable "target_group_arns" {
+  type = list(string)
+}
+
+variable "health_check_type" {
+  type = string
+}
+
+variable "force_delete" {
+  type = bool
+  default = true
+}
+
+variable "termination_policies" {
+  type = list(string)
+  default = [ "Default" ]
+}
