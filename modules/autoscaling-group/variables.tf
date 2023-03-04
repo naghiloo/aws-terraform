@@ -64,3 +64,7 @@ variable "termination_policies" {
   type = list(string)
   default = [ "Default" ]
 }
+
+variable "zone_identifiers" {
+  type = list(string)
+}

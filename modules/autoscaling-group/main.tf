@@ -17,9 +17,9 @@ resource "aws_autoscaling_group" "autoscaling_group" {
   min_size = var.min_size
   max_size = var.max_size
   desired_capacity = var.desired_capacity
-  availability_zones = [ "eu-central-1a" ]
   target_group_arns = var.target_group_arns
   health_check_type = var.health_check_type
   force_delete = var.force_delete
   termination_policies =  var.termination_policies
+  vpc_zone_identifier = var.zone_identifiers
 }

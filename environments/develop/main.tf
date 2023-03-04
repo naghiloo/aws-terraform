@@ -107,6 +107,7 @@ module "asg" {
   
   vpc_id = module.vpc.id
   aws_region = var.aws_region
+  zone_identifiers = [ module.subnet_public1.id, module.subnet_public2.id ]
 }
 
 module "alb" {
