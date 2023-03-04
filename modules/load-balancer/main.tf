@@ -1,6 +1,6 @@
 
 resource "aws_lb" "load_balancer" {
-    name = "${var.lb_name}"
-    security_groups = var.lb_security_group_id
+    name = "${var.name}"
+    security_groups = var.security_groups
     subnets = var.subnets
 }
